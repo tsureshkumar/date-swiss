@@ -1,0 +1,42 @@
+{
+    "name": "date-swiss",
+    "version": "0.0.1",
+    "description": "Multiple date related utils like insert current date/time into the current writable area pointed by mouse",
+    "main": "index.js",
+    "scripts": {
+        "build": "npm run build:firefox && npm run build:chrome",
+        "build:chrome": "webpack --mode=production",
+        "build:firefox": "webpack --mode=production --output-path dist-firefox && cp dist-firefox/manifest-firefox.json dist-firefox/manifest.json",
+        "WDS": "webpack-dev-server --inline --hot",
+        "WDSC": "webpack-dev-server --inline --hot --open 'Google Chrome'",
+        "WDSF": "webpack-dev-server --inline --hot --open 'Firefox'",
+        "WDSS": "webpack-dev-server --inline --hot --open 'Safari'",
+        "watch:plugin": "watch 'npm run build:chrome' ./src ./public -d -u"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.14.6",
+        "@babel/polyfill": "^7.12.1",
+        "autoprefixer": "^10.3.1",
+        "babel-loader": "^8.2.2",
+        "copy-webpack-plugin": "^9.0.1",
+        "css-loader": "^6.1.0",
+        "html-webpack-plugin": "^5.3.2",
+        "postcss": "^8.3.5",
+        "postcss-loader": "^6.1.1",
+        "style-loader": "^3.1.0",
+        "tailwindcss": "^2.2.4",
+        "watch": "^1.0.2",
+        "webpack": "^5.45.1",
+        "webpack-cli": "^4.7.2",
+        "webpack-dev-server": "^3.11.2"
+    },
+    "dependencies": {
+        "backbone": "^1.4.0",
+        "date-fns": "^2.22.1",
+        "jquery": "^3.6.0",
+        "lodash": "^4.17.21",
+        "mustache": "^4.2.0"
+    }
+}
